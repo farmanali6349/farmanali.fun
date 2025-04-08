@@ -111,15 +111,3 @@ React-based productivity app with local storage.
 
 **License**
 © 2025 Farman Ali. All rights reserved.
-Metrics
-Expand view
-First Contentful Paint
-0.9 s
-Largest Contentful Paint
-3.8 s
-Total Blocking Time
-30 ms
-Cumulative Layout Shift
-0.009
-Speed Index
-2.1 s
