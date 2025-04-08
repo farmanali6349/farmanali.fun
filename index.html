@@ -3,34 +3,437 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Farman Ali</title>
-    <link rel="stylesheet" href="style.css" />
+    <title>Farman Ali | MERN stack developer</title>
+    <link
+      rel="preload"
+      href="assets/fonts/JetBrainsMono-Regular.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link rel="stylesheet" href="src/styles/style.css" />
+    <!-- Favicons -->
+    <link
+      rel="icon"
+      type="image/png"
+      href="/assets/icons/favicons/favicon-96x96.png"
+      sizes="96x96"
+    />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="/assets/icons/favicons/favicon.svg"
+    />
+    <link rel="shortcut icon" href="/assets/icons/favicons/favicon.ico" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/assets/icons/favicons/apple-touch-icon.png"
+    />
+    <link rel="manifest" href="/assets/icons/favicons/site.webmanifest" />
   </head>
   <body>
-    <p class="coming-soon"><b>Coming Soon</b></p>
+    <!-- Header -->
     <header>
-      <h2>Farman Ali</h2>
-      <p>MERN Stack Developer</p>
-      <div class="buttons">
+      <nav>
+        <h1>Farman Ali</h1>
+        <button class="menu" onclick="openMenu()">
+          <img src="assets/icons/menu_icon.svg" alt="menu-icon" />
+        </button>
+        <ul class="nav-bar">
+          <button class="close" onclick="closeMenu()">
+            <img
+              src="assets/icons/close.svg"
+              alt="close"
+              width="30px"
+              height="30px"
+            />
+          </button>
+          <li><a href="#home">Home</a></li>
+          <li><a href="/projects">Projects</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#testimonials">Testimonials</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <a
+            class="primary-btn"
+            href="assets/pdf/resume_farmanali.pdf"
+            download="resume_farmanali.pdf"
+            >Resume</a
+          >
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Hero -->
+    <section id="home" class="hero">
+      <div class="left">
+        <div class="blur"></div>
+        <h2>
+          <span class="gradient-text">Farman</span>
+          <span class="gradient-text">Ali</span>
+        </h2>
+        <p>Self-taught Full-Stack Developer crafting solutions with code.</p>
         <a
-          href="https://www.linkedin.com/in/farmanali6349/"
-          title="Farman Ali | MERN Stack Developer | Linkedin"
-          target="_blank"
-        >
-          <img src="icons/linkedin.svg" alt="linkedin" /> Linkedin
-        </a>
-        <a
-          href="https://web.facebook.com/farmanali6349"
-          title="Farman Ali | MERN Stack Developer | Facebook"
-          target="_blank"
-          ><img src="icons/facebook.svg" alt="facebook" />Facebook</a
+          class="primary-btn"
+          href="assets/pdf/resume_farmanali.pdf"
+          download="resume_farmanali.pdf"
+          >Download Resume</a
         >
       </div>
-      <img
-        src="icons/under-construction.svg"
-        alt="under-construction-icon"
-        class="under-construction"
-      />
-    </header>
+      <div class="profile-image">
+        <img
+          src="assets/images/farmanali.png"
+          alt="Farman Ali"
+          width="500px"
+          height="500px"
+        />
+      </div>
+    </section>
+    <!-- My Work -->
+    <section id="work">
+      <div class="section-title">
+        <h3><span class="gradient-text">My</span><br />Work</h3>
+      </div>
+      <p class="section-description">I have created 20+ projects.</p>
+      <div class="projects">
+        <!-- Blogistan -->
+        <div class="project-card">
+          <div class="project-image">
+            <img
+              src="assets/images/projects/blogistan.png"
+              alt="blogistan project"
+              width="250"
+              height="250"
+              loading="lazy"
+            />
+          </div>
+          <div class="project-description">
+            <div class="links">
+              <a href="https://blogistan.netlify.app"
+                ><img src="assets/icons/website.svg" alt="blogistan-website"
+              /></a>
+              <a href="https://github.com/farmanali6349/blogistan"
+                ><img src="assets/icons/github.svg" alt="blogistan-website"
+              /></a>
+              <a href="/projects/blogistan"
+                ><img src="assets/icons/link.svg" alt="blogistan-website"
+              /></a>
+            </div>
+            <h4>Blogistan</h4>
+          </div>
+        </div>
+        <!-- My Blog -->
+        <div class="project-card">
+          <div class="project-image">
+            <img
+              src="assets/images/projects/my_blog.jpg"
+              alt="my-blog project"
+              width="250"
+              height="250"
+              loading="lazy"
+            />
+          </div>
+          <div class="project-description">
+            <div class="links">
+              <a href="https://github.com/farmanali6349/my-blog"
+                ><img src="assets/icons/github.svg" alt="my-blog-app"
+              /></a>
+              <a href="/projects/my-blog"
+                ><img src="assets/icons/link.svg" alt="visit-my-blog"
+              /></a>
+            </div>
+            <h4>My Blog</h4>
+          </div>
+        </div>
+        <!-- Guess The Number -->
+        <div class="project-card">
+          <div class="project-image">
+            <img
+              src="assets/images/projects/guess_the_number.jpg"
+              alt="guess the number game project"
+              width="250"
+              height="250"
+              loading="lazy"
+            />
+          </div>
+          <div class="project-description">
+            <div class="links">
+              <a href="https://guessthenumber5.netlify.app/"
+                ><img
+                  src="assets/icons/website.svg"
+                  alt="guess the number game"
+              /></a>
+              <a href="https://github.com/farmanali6349/number-guessing-game"
+                ><img src="assets/icons/github.svg" alt="github"
+              /></a>
+              <a href="/projects/guess-the-number"
+                ><img src="assets/icons/link.svg" alt="visit"
+              /></a>
+            </div>
+            <h4>Guess The No.</h4>
+          </div>
+        </div>
+      </div>
+      <a class="primary-btn" href="/projects">See All</a>
+    </section>
+    <!-- My Skills -->
+    <section id="skills">
+      <div class="section-title">
+        <h3><span class="gradient-text">My</span><br />Skills</h3>
+      </div>
+      <div class="skills-box-wrapper">
+        <!-- MERN Stack-->
+        <div class="mern skill-box">
+          <div class="skills-wrapper">
+            <div class="skill mongodb-skill">
+              <img
+                src="assets/icons/mongodb.svg"
+                alt="mongodb"
+                loading="lazy"
+              />
+            </div>
+            <div class="skill">
+              <img
+                src="assets/icons/express.svg"
+                alt="express"
+                loading="lazy"
+              />
+            </div>
+            <div class="skill">
+              <img src="assets/icons/react.svg" alt="react" loading="lazy" />
+            </div>
+            <div class="skill">
+              <img src="assets/icons/nodejs.svg" alt="nodejs" loading="lazy" />
+            </div>
+          </div>
+          <h3 class="skill-title">MongoDB - Express - React - Nodejs</h3>
+          <a href="/projects/mern" class="tertiary-btn">Proof Of Work</a>
+        </div>
+        <!-- HTML-CSS-JS -->
+        <div class="html-css-js skill-box">
+          <div class="skills-wrapper">
+            <div class="skill">
+              <img src="assets/icons/html.svg" alt="html" loading="lazy" />
+            </div>
+            <div class="skill">
+              <img src="assets/icons/css.svg" alt="css" loading="lazy" />
+            </div>
+            <div class="skill">
+              <img
+                src="assets/icons/javascript.svg"
+                alt="javascript"
+                loading="lazy"
+              />
+            </div>
+          </div>
+          <h3 class="skill-title">HTML - CSS - JS</h3>
+          <a href="/projects/html-css-js" class="tertiary-btn">Proof Of Work</a>
+        </div>
+      </div>
+    </section>
+    <!-- Qoute -->
+    <section>
+      <blockquote>
+        <div class="blur"></div>
+        I think <span><a href="/projects">work</a></span> is more important than
+        education and <span><a href="#education">certificates</a></span
+        >, work defines more.
+      </blockquote>
+    </section>
+    <!-- Education -->
+    <section id="education">
+      <div class="section-title">
+        <h3><span class="gradient-text">My</span><br />Education</h3>
+      </div>
+      <h3 class="sub-heading">Academics</h3>
+      <div class="education-box">
+        <p>BSIT (Bachelor In IT)</p>
+        <h4>
+          <img
+            src="assets/icons/iub.png"
+            alt="The Islamia University Bahawalpur"
+            style="width: 2rem; float: left"
+            loading="lazy"
+          />The Islamia University, <br />Bahawalpur
+        </h4>
+        <p class="batch">Graduated (2020-24)</p>
+      </div>
+      <h3 class="certification sub-heading">Certifications</h3>
+      <div class="list">
+        <ol class="certificates">
+          <h4>
+            <a href="https://codedamn.com"
+              ><img
+                src="assets/icons/codedamn.svg"
+                alt="codedamn.com"
+                style="width: 1.5rem"
+                loading="lazy"
+              />codedamn.com</a
+            >
+          </h4>
+          <li>
+            Linux CLI
+            <a
+              href="https://codedamn.com/certificate/verify/ed8e491eb8b593f5aaa10e0e3194799d14c64fc4"
+              class="tertiary-btn"
+              >verify</a
+            >
+          </li>
+          <li>
+            Node JS
+            <a
+              href="https://codedamn.com/certificate/verify/22f322a14107e0929b5e0b567e294cbbfae9a44c"
+              class="tertiary-btn"
+              >verify</a
+            >
+          </li>
+          <li>
+            React
+            <a
+              href="https://codedamn.com/certificate/verify/2cfb8b47046d58c58b499d1467aa63a84a6bf4c1"
+              class="tertiary-btn"
+              >verify</a
+            >
+          </li>
+          <li>
+            Git Masterclass
+            <a
+              href="https://codedamn.com/certificate/verify/8957efb3166ed2c19aaeca5283da5abab8e56a61"
+              class="tertiary-btn"
+              >verify</a
+            >
+          </li>
+          <li>
+            Adv. React Hooks
+            <a
+              href="https://codedamn.com/certificate/verify/9bb7cb36da25e9b1c904bc787b765f3e683a6582"
+              class="tertiary-btn"
+              >verify</a
+            >
+          </li>
+          <li>
+            Adv. React Concepts
+            <a
+              href="https://codedamn.com/certificate/verify/3b81cb88a94acdca22ed061ad1a80d3f7b17eb64"
+              class="tertiary-btn"
+              >verify</a
+            >
+          </li>
+        </ol>
+      </div>
+      <h3 class="sub-heading">Learnings (Youtube)</h3>
+      <div class="list">
+        <ul>
+          <li>
+            Code With Harry (<a
+              href="https://www.youtube.com/playlist?list=PLu0W_9lII9ahR1blWXxgSlL4y9iQBnLpR"
+              class="tertiary-btn"
+              >JS</a
+            >)
+          </li>
+          <li>
+            Sherian Coding School (<a
+              href="https://www.youtube.com/playlist?list=PLbtI3_MArDOkXRLxdMt1NOMtCS-84ibHH"
+              class="tertiary-btn"
+              >Backend</a
+            >)
+          </li>
+          <li>
+            Chai Aur Code (<a
+              href="https://www.youtube.com/playlist?list=PLu71SKxNbfoBuX3f4EOACle2y-tRC5Q37"
+              class="tertiary-btn"
+              >JS</a
+            >
+            &
+            <a
+              href="https://www.youtube.com/playlist?list=PLu71SKxNbfoDqgPchmvIsL4hTnJIrtige"
+              class="tertiary-btn"
+              >React</a
+            >
+            &
+            <a
+              href="https://www.youtube.com/playlist?list=PLu71SKxNbfoBGh_8p_NS-ZAh6v7HhYqHW"
+              class="tertiary-btn"
+              >Backend</a
+            >)
+          </li>
+        </ul>
+      </div>
+    </section>
+    <!-- Clients -->
+    <section id="testimonials">
+      <h3 class="section-title">
+        <span class="gradient-text">Clients</span><br />Testimonials
+      </h3>
+      <p>Your's can be <span>first!!😉</span></p>
+      <a class="primary-btn" href="#contact">Let's Discuss Your Project</a>
+    </section>
+    <!-- Contact -->
+    <section id="contact">
+      <h3 class="section-title">
+        <span class="gradient-text">My</span><br />Contact
+      </h3>
+      <div class="contacts">
+        <a
+          href="https://wa.me/923053666838?text=Assalam-o-Aliakum!%20Farman%2C%20I%20saw%20your%20portfolio%20and%20wanted%20to%20connect."
+          target="_blank"
+          class="contact tertiary-btn"
+          ><img
+            src="assets/icons/whatsapp.svg"
+            alt="github"
+            loading="lazy"
+          />+92 305 3666838</a
+        >
+        <a
+          href="mailto:farmanali6349@gmail.com?subject=Hello%20Farman%20Ali&body=Hi%20Farman%2C%0A%0AI%20came%20across%20your%20profile%20as%20a%20MERN%20stack%20developer%20and%20wanted%20to%20connect.%0A%0ARegards,"
+          target="_blank"
+          class="contact tertiary-btn"
+          ><img
+            src="assets/icons/mail.svg"
+            alt="github"
+            loading="lazy"
+          />farmanali6349@gmail.com</a
+        >
+        <a
+          href="https://linkedin.com/in/farmanali6349"
+          target="_blank"
+          class="contact tertiary-btn"
+          ><img
+            src="assets/icons/linkedin.svg"
+            alt="linkedin"
+            loading="lazy"
+          />farmanali6349</a
+        >
+        <a
+          href="https://github.com/farmanali6349"
+          target="_blank"
+          class="contact tertiary-btn"
+          ><img
+            src="assets/icons/github.svg"
+            alt="github"
+            loading="lazy"
+          />farmanali6349</a
+        >
+        <a
+          href="https://facebook.com/farmanali6349"
+          target="_blank"
+          class="contact tertiary-btn"
+          ><img
+            src="assets/icons/facebook.svg"
+            alt="facebook"
+            loading="lazy"
+          />farmanali6349</a
+        >
+      </div>
+    </section>
+    <section id="cta">
+      <div class="blur"></div>
+      <p>Need a website? Let’s work together — contact me!</p>
+    </section>
+    <footer>
+      <p>&copy; 2025 Farman Ali. All rights reserved.</p>
+    </footer>
+    <script src="src/scripts/index.js"></script>
   </body>
 </html>
