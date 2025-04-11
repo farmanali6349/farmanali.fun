@@ -1,0 +1,447 @@
+/* ========================================
+   1. Base Styles / Reset
+======================================== */
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+:root {
+  --reg: "JetBrains Mono Regular", monospace, sans-serif;
+  --med: "JetBrains Mono Medium", monospace, sans-serif;
+  --bold: "JetBrains Mono Bold", monospace, sans-serif;
+  --border: 1px solid #4b4b4b;
+  --primary: #f3be00;
+  --primary-hover: #c59a00;
+  --on-primary: #000;
+  --overlay: #212121;
+  --fade: #9b9b9b;
+}
+
+/* ========================================
+   2. Fonts
+======================================== */
+
+@font-face {
+  font-family: "JetBrains Mono Regular";
+  src: url("../../assets/fonts/JetBrainsMono-Regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "JetBrains Mono Medium";
+  src: url("../../assets/fonts/JetBrainsMono-Medium.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "JetBrains Mono Bold";
+  src: url("../../assets/fonts/JetBrainsMono-Bold.woff2") format("woff2");
+}
+
+/* ========================================
+   3. Variables (CSS Custom Properties)
+======================================== */
+
+.primary-btn {
+  display: inline-block;
+  padding: 8px 24px;
+  font-size: 1rem;
+  border: none;
+  outline: none;
+  background-color: var(--primary);
+  transition: background 0.3s;
+  border-radius: 8px;
+  font-family: var(--bold);
+  cursor: pointer;
+  color: var(--on-primary);
+  text-decoration: none;
+  text-align: center;
+}
+
+.primary-btn:hover {
+  background-color: var(--primary-hover);
+}
+
+.tertiary-btn {
+  display: inline-block;
+  font-size: 0.8rem;
+  background: transparent;
+  outline: none;
+  border: none;
+  text-decoration: underline;
+  color: var(--primary);
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.tertiary-btn:hover {
+  color: var(--primary-hover);
+}
+
+body {
+  color: #f1f1f1;
+  background-color: #121212;
+  font-family: var(--reg);
+}
+
+.blur {
+  width: 150px;
+  height: 150px;
+  border-radius: 100px;
+  filter: blur(6rem);
+  background-color: var(--primary);
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  z-index: -1;
+}
+.gradient-text {
+  /* Set the gradient background with white at the top and grey at the bottom */
+  background: linear-gradient(to bottom, white 50%, grey 70%);
+
+  /* Ensure the background only applies to the text */
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  /* Make text color transparent so the gradient shows */
+  color: transparent;
+
+  font-weight: bold;
+}
+
+.section-title {
+  font-size: clamp(1.8rem, 2.5vw, 3rem);
+  text-align: center;
+  line-height: 1.6rem;
+  margin: 4rem 0;
+  text-align: center;
+}
+
+/* ========================================
+   Header
+======================================== */
+
+header {
+  padding: 0px 24px;
+  width: 100%;
+  border-bottom: var(--border);
+}
+
+nav {
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1024px;
+  margin: auto;
+}
+
+a.logo {
+  text-decoration: none;
+  color: #f1f1f1;
+  margin: 0;
+  padding: 0;
+}
+.menu {
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+
+.nav-bar {
+  position: fixed;
+  right: -250px;
+  top: 0;
+  height: 100dvh;
+  width: 250px;
+  background-color: var(--overlay);
+  padding: 24px;
+  list-style-type: none;
+  transition: right 0.3s ease-in-out;
+  z-index: 5;
+}
+
+.nav-bar.open {
+  right: 0px;
+}
+
+.nav-bar .close {
+  background: transparent;
+  cursor: pointer;
+  outline: none;
+  border: none;
+}
+
+.nav-bar li {
+  margin: 8px 0;
+}
+
+.nav-bar li a {
+  color: #f1f1f1;
+  text-decoration: none;
+  transition: color 0.3s;
+  font-size: 1.5rem;
+}
+
+.nav-bar li a:focus {
+  outline: 2px solid var(--primary);
+  outline-offset: 4px;
+}
+
+.nav-bar li a:hover {
+  color: var(--primary);
+  text-decoration: underline;
+}
+
+.nav-bar .primary-btn {
+  margin-top: 16px;
+}
+
+/* ========================================
+   Article
+======================================== */
+
+article {
+  max-width: 700px;
+  margin: 32px auto;
+  padding: 24px;
+}
+
+article .image {
+  width: 100%;
+  max-width: 700px;
+}
+
+article .image img {
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  border: 1px solid #7d7d7d5c;
+}
+
+article h1 {
+  font-size: 2rem;
+  margin: 16px 0;
+}
+
+article p.description {
+  margin-bottom: 16px;
+  font-size: 1rem;
+  color: var(--fade);
+}
+
+article .proj-links {
+  display: flex;
+  gap: 8px;
+  margin: 16px 0;
+  flex-wrap: wrap;
+}
+
+article a.proj-link {
+  padding: 8px 16px;
+  border-radius: 4px;
+  background-color: var(--overlay);
+  display: flex;
+  align-items: center;
+  color: #f1f1f1;
+  text-decoration: none;
+  gap: 4px;
+  font-size: 1.5rem;
+  width: fit-content;
+  border: 1px solid var(--fade);
+}
+
+article a.proj-link img {
+  width: 24px;
+  margin-right: 4px;
+}
+
+article h2 {
+  margin: 32px 0;
+  font-size: 1.8rem;
+}
+
+article hr {
+  display: none;
+}
+
+article h3 {
+  margin: 24px 0;
+  font-size: 1.3rem;
+}
+
+article p {
+  margin: 10px 0;
+  font-size: 1rem;
+}
+
+article ul {
+  margin-left: 32px;
+  font-size: 1rem;
+}
+article ul li {
+  margin: 8px 0;
+}
+
+article pre {
+  padding: 16px;
+  border-radius: 8px;
+  background: var(--overlay);
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+article code {
+  padding: 4px;
+  border-radius: 4px;
+  background-color: #2f2f2f;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  line-height: 2rem;
+}
+
+article pre code {
+  background-color: transparent;
+}
+
+article a {
+  font-size: 1rem;
+  color: var(--primary);
+  transition: color 0.3s;
+}
+
+article a:hover {
+  color: var(--primary-hover);
+}
+/* ========================================
+   Work Section
+======================================== */
+
+#work {
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-bottom: 32px;
+}
+.project-card {
+  max-width: 250px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.project-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.project-image {
+  width: 250px;
+  height: 250px;
+}
+
+.project-description {
+  background-color: #000;
+  padding: 16px;
+  width: 100%;
+}
+
+.project-description .links {
+  display: flex;
+  align-items: center;
+}
+
+.project-description .links a {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  padding: 8px;
+  background-color: var(--overlay);
+  margin-right: 8px;
+  border-radius: 35px;
+}
+
+.project-description .links a img {
+  width: 103%;
+}
+.project-description h4 {
+  margin-top: 8px;
+  font-size: 1.5rem;
+}
+
+.project-description .links a.project-link {
+  background-color: var(--primary);
+  transition: background 0.3s;
+}
+
+.project-description .links a.project-link:hover {
+  background-color: var(--primary-hover);
+}
+
+#work .primary-btn {
+  margin-top: 32px;
+}
+
+.section-title {
+  font-size: clamp(1.8rem, 2.5vw, 3rem);
+  text-align: center;
+  line-height: 1.6rem;
+  margin: 4rem 0;
+}
+
+/* 4. Work Section */
+#work {
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-bottom: 32px;
+}
+
+.projects {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 32px;
+}
+
+.project-description .links a.project-link {
+  background-color: var(--primary);
+  transition: background 0.3s;
+}
+
+.project-description .links a.project-link:hover {
+  background-color: var(--primary-hover);
+}
+
+.skill-tags {
+  margin: 16px 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.skill-tag {
+  padding: 4px 12px;
+  border-radius: 8px;
+  background-color: var(--overlay);
+  color: var(--primary);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.skill-tag:hover {
+  color: var(--primary-hover);
+}

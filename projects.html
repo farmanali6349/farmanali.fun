@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Projects | Farman Ali - Self-Taught MERN Stack Developer</title>
+    <meta
+      name="description"
+      content="Explore 20+ projects by Farman Ali, a self-taught MERN stack developer from Pakistan—Blogistan, My Blog, Guess The Number, and more with MongoDB, React, Node.js."
+    />
+    <!-- Open Graph (Facebook, LinkedIn, WhatsApp) -->
+    <meta
+      property="og:title"
+      content="Projects | Farman Ali - Self-Taught MERN Stack Developer"
+    />
+    <meta
+      property="og:description"
+      content="Explore 20+ projects by Farman Ali, a self-taught MERN stack developer—Blogistan, My Blog, Guess The Number, built with MongoDB, React, Node.js."
+    />
+    <meta
+      property="og:image"
+      content="https://farmanali.fun/assets/images/projects/blogistan.webp"
+    />
+    <meta property="og:url" content="https://farmanali.fun/projects.html" />
+    <meta property="og:type" content="website" />
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Projects | Farman Ali - Self-Taught MERN Stack Developer"
+    />
+    <meta
+      name="twitter:description"
+      content="Explore 20+ projects by Farman Ali, a self-taught MERN stack developer—Blogistan, My Blog, Guess The Number, built with MongoDB, React, Node.js."
+    />
+    <meta
+      name="twitter:image"
+      content="https://farmanali.fun/assets/images/projects/blogistan.webp"
+    />
+
+    <link rel="canonical" href="https://farmanali.fun/projects.html" />
+    <link
+      rel="preload"
+      href="assets/fonts/JetBrainsMono-Regular.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <!-- Favicons -->
+    <link
+      rel="icon"
+      type="image/png"
+      href="assets/icons/favicons/favicon-96x96.webp"
+      sizes="96x96"
+    />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="assets/icons/favicons/favicon.svg"
+    />
+    <link rel="shortcut icon" href="assets/icons/favicons/favicon.jpg" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="assets/icons/favicons/apple-touch-icon.webp"
+    />
+    <link rel="manifest" href="assets/icons/favicons/site.webmanifest" />
+
+    <style>
+      :root {
+        --reg: "JetBrains Mono Regular", monospace, sans-serif;
+        --med: "JetBrains Mono Medium", monospace, sans-serif;
+        --bold: "JetBrains Mono Bold", monospace, sans-serif;
+        --border: 1px solid #4b4b4b;
+        --primary: #f3be00;
+        --primary-hover: #c59a00;
+        --on-primary: #000;
+        --overlay: #212121;
+      }
+
+      body {
+        color: #f1f1f1;
+        background-color: #121212;
+        font-family: var(--reg);
+      }
+
+      .primary-btn {
+        display: inline-block;
+        padding: 8px 24px;
+        font-size: 1rem;
+        border: none;
+        outline: 0;
+        transition: background 0.3s;
+        border-radius: 8px;
+        cursor: pointer;
+        color: var(--on-primary);
+        text-decoration: none;
+        text-align: center;
+        background-color: var(--primary);
+      }
+
+      .primary-btn:hover {
+        background-color: var(--primary-hover);
+      }
+
+      .menu,
+      .nav-bar .close {
+        cursor: pointer;
+        outline: 0;
+        border: none;
+      }
+
+      header {
+        padding: 0 24px;
+        width: 100%;
+        border-bottom: var(--border);
+      }
+
+      nav {
+        height: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        max-width: 1024px;
+        margin: auto;
+      }
+
+      #work {
+        align-items: center;
+        display: flex;
+      }
+
+      .menu {
+        background-color: transparent;
+      }
+
+      .nav-bar {
+        position: fixed;
+        right: -250px;
+        top: 0;
+        height: 100dvh;
+        width: 250px;
+        background-color: var(--overlay);
+        list-style-type: none;
+        transition: right 0.3s ease-in-out;
+        z-index: 5;
+        padding: 24px;
+      }
+
+      #work {
+        padding: 0 24px;
+      }
+
+      a.logo {
+        text-decoration: none;
+        color: #f1f1f1;
+        margin: 0;
+        padding: 0;
+      }
+
+      .nav-bar.open {
+        right: 0;
+      }
+
+      .nav-bar .close {
+        background: 0 0;
+      }
+
+      .nav-bar li {
+        margin: 8px 0;
+      }
+
+      .nav-bar li a {
+        color: #f1f1f1;
+        text-decoration: none;
+        transition: color 0.3s;
+        font-size: 1.5rem;
+      }
+
+      .nav-bar li a:focus {
+        outline: 2px solid var(--primary);
+        outline-offset: 4px;
+      }
+
+      .nav-bar li a:hover {
+        color: var(--primary);
+        text-decoration: underline;
+      }
+
+      .nav-bar .primary-btn {
+        margin-top: 16px;
+      }
+
+      .section-description {
+        text-align: center;
+        margin-bottom: 3rem;
+        font-size: 1rem;
+        padding: 0 24px;
+      }
+
+      .project-card {
+        max-width: 250px;
+        border-radius: 8px;
+        overflow: hidden;
+      }
+
+      .project-card img {
+        object-fit: cover;
+      }
+
+      .project-image {
+        width: 250px;
+        height: 250px;
+      }
+
+      .project-description {
+        background-color: #000;
+        padding: 16px;
+        width: 100%;
+      }
+
+      .project-description .links {
+        display: flex;
+        align-items: center;
+      }
+
+      .project-description .links a {
+        display: inline-block;
+        width: 40px;
+        height: 40px;
+        padding: 8px;
+        background-color: var(--overlay);
+        margin-right: 8px;
+        border-radius: 35px;
+      }
+
+      .project-description .links a img {
+        width: 103%;
+      }
+
+      .project-description h4 {
+        margin-top: 8px;
+        font-size: 1.5rem;
+      }
+
+      #work .primary-btn {
+        margin-top: 32px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <nav>
+        <h1 title="Farman Ali Portfolio">
+          <a href="./index.html" class="logo">Farman Ali</a>
+        </h1>
+        <button class="menu" onclick="openMenu()">
+          <img
+            src="assets/icons/menu_icon.svg"
+            alt="Menu Icon By Farman Ali | Self-Taught Mern Stack Developer"
+          />
+        </button>
+        <ul class="nav-bar">
+          <button class="close" onclick="closeMenu()">
+            <img
+              src="assets/icons/close.svg"
+              alt="Close Icon By Farman Ali | Self-Taught Mern Stack Developer"
+              alt="close"
+              width="30px"
+              height="30px"
+            />
+          </button>
+          <li><a href="./index.html">Home</a></li>
+          <li><a href="./index.html#skills">Skills</a></li>
+          <li><a href="./index.html#education">Education</a></li>
+          <li><a href="./index.html#testimonials">Testimonials</a></li>
+          <li><a href="./index.html#contact">Contact</a></li>
+          <a
+            class="primary-btn"
+            href="assets/pdf/resume_farmanali.pdf"
+            download="resume_farmanali.pdf"
+            >Resume</a
+          >
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Work/Project Section -->
+    <section id="work">
+      <div class="section-title">
+        <h2><span class="gradient-text">My</span><br />Projects</h2>
+      </div>
+      <p class="section-description">
+        As a MERN stack developer, I built Blogistan using React and Appwrite,
+        showcasing my skills in frontend and backend development.
+      </p>
+      <div class="projects">
+        <!-- BLOGISTAN PROJECT -->
+        <div class="project-card">
+          <div class="project-image">
+            <img
+              src="assets/images/projects/blogistan.webp"
+              alt="Blogistan project by MERN stack developer Farman Ali"
+              width="250"
+              height="250"
+              loading="lazy"
+            />
+          </div>
+          <div class="project-description">
+            <div class="links">
+              <a href="https://blogistan.netlify.app"
+                ><img
+                  src="assets/icons/website.svg"
+                  alt="Blogistan Project By Farman Ali Self-Taught MERN stack developer live site link" /></a
+              ><a href="https://github.com/farmanali6349/blogistan"
+                ><img
+                  src="assets/icons/github.svg"
+                  alt="Blogistan Project By Farman Ali Self-Taught MERN stack developer github link" /></a
+              ><a href="./projects/blogistan.html" class="project-link"
+                ><img
+                  src="assets/icons/link.svg"
+                  alt="Blogistan Project By Farman Ali Self-Taught MERN stack developer project details link"
+              /></a>
+            </div>
+            <div class="project-description-text">
+              <div class="skill-tags">
+                <a href="?skill=react" class="skill-tag">React</a>
+                <a href="?skill=appwrite" class="skill-tag">Appwrite</a>
+                <a href="?skill=fullstack" class="skill-tag">Fullstack</a>
+              </div>
+              <h4>Blogistan</h4>
+              <p>
+                Blogistan is a full-stack blog platform built by Farman Ali, a
+                self-taught MERN stack developer, using React for a dynamic
+                frontend and Appwrite for backend services like authentication
+                and database management.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- MY BLOG PROJECT -->
+        <div class="project-card">
+          <div class="project-image">
+            <img
+              src="assets/images/projects/my-blog.webp"
+              alt="My Blog project by MERN stack developer Farman Ali"
+              width="250"
+              height="250"
+              loading="lazy"
+            />
+          </div>
+          <div class="project-description">
+            <div class="links">
+              <a href="https://github.com/farmanali6349/my-blog"
+                ><img
+                  src="assets/icons/github.svg"
+                  alt="My Blog Project By Farman Ali Self-Taught MERN stack developer github link" /></a
+              ><a href="./projects/my-blog.html" class="project-link"
+                ><img
+                  src="assets/icons/link.svg"
+                  alt="My Blog Project By Farman Ali Self-Taught MERN stack developer project details link"
+              /></a>
+            </div>
+            <div class="project-description-text">
+              <div class="skill-tags">
+                <a href="?skill=nodejs" class="skill-tag">nodejs</a>
+                <a href="?skill=express" class="skill-tag">express</a>
+                <a href="?skill=mongodb" class="skill-tag">mongodb</a>
+                <a href="?skill=ejs" class="skill-tag">ejs</a>
+                <a href="?skill=jwt" class="skill-tag">jwt</a>
+                <a href="?skill=bcrypt" class="skill-tag">bcrypt</a>
+                <a href="?skill=fullstack" class="skill-tag">fullstack</a>
+              </div>
+              <h4>My Blog</h4>
+              <p>
+                My Blog is a full-stack blogging platform created by Farman Ali
+                using Node.js, Express.js, MongoDB, and EJS. It features
+                server-side rendering, secure JWT authentication, and complete
+                post management with a focus on clean architecture and
+                performance.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Guess The Number -->
+        <div class="project-card">
+          <div class="project-image">
+            <img
+              src="assets/images/projects/guess-the-number.webp"
+              alt="Guess the number game project by MERN stack developer Farman Ali"
+              width="250"
+              height="250"
+              loading="lazy"
+            />
+          </div>
+          <div class="project-description">
+            <div class="links">
+              <a href="https://guessthenumber5.netlify.app/"
+                ><img
+                  src="assets/icons/website.svg"
+                  alt="Guess the number game Project By Farman Ali Self-Taught MERN stack developer live site link" /></a
+              ><a href="https://github.com/farmanali6349/number-guessing-game"
+                ><img
+                  src="assets/icons/github.svg"
+                  alt="Guess the number game Project By Farman Ali Self-Taught MERN stack developer github link" /></a
+              ><a
+                href="./projects/guess-the-number-game.html"
+                class="project-link"
+                ><img
+                  src="assets/icons/link.svg"
+                  alt="Guess the number game Project By Farman Ali Self-Taught MERN stack developer project details link"
+              /></a>
+            </div>
+            <div class="project-description-text">
+              <div class="skill-tags">
+                <a href="?skill=html" class="skill-tag">html</a>
+                <a href="?skill=css" class="skill-tag">css</a>
+                <a href="?skill=javascript" class="skill-tag">javascript</a>
+                <a href="?skill=localstorage" class="skill-tag">localstorage</a>
+                <a href="?skill=game" class="skill-tag">game</a>
+                <a href="?skill=dom" class="skill-tag">dom</a>
+              </div>
+              <h4>Guess The Number Game</h4>
+              <p>
+                A fun and interactive number guessing game where players try to
+                guess a secret number between 1 and 100. Built with HTML, CSS,
+                and JavaScript, it features difficulty levels, smart hints,
+                local storage for stats, and a responsive UI for a game-like
+                experience.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="notice">
+      <p>More projects are coming soon</p>
+    </div>
+
+    <!-- CTA -->
+    <section id="cta">
+      <div class="blur"></div>
+      <p>Need a website? Let’s work together — contact me!</p>
+    </section>
+    <footer>
+      <p>&copy; 2025 Farman Ali. All rights reserved.</p>
+    </footer>
+    <link rel="stylesheet" href="src/styles/projects.css" />
+    <script src="src/scripts/index.js" defer="defer"></script>
+  </body>
+</html>
