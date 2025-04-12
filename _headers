@@ -6,3 +6,6 @@
 
 /sitemap.xml
   Content-Type: application/xml
+
+/https://www.googletagmanager.com/gtag/js
+Cache-Control: max-age=86400
