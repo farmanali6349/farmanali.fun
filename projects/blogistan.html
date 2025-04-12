@@ -1,28 +1,269 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Blogistan | Farman Ali - MERN Stack Developer Project</title><meta name="description" content="Blogistan by Farman Ali, a self-taught MERN stack developer from Pakistan. A full-stack blog platform built with React and Appwrite—explore features, demo, and code."><meta property="og:title" content="Blogistan | Farman Ali - MERN Stack Developer Project"><meta property="og:description" content="Blogistan by Farman Ali—a full-stack blog platform built with React and Appwrite. Check out the live demo and GitHub repo!"><meta property="og:image" content="https://farmanali.fun/assets/images/projects/blogistan.webp"><meta property="og:url" content="https://farmanali.fun/projects/blogistan.html"><meta property="og:type" content="website"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Blogistan | Farman Ali - MERN Stack Developer Project"><meta name="twitter:description" content="Blogistan by Farman Ali—a full-stack blog platform built with React and Appwrite. Check out the live demo and GitHub repo!"><meta name="twitter:image" content="https://farmanali.fun/assets/images/projects/blogistan.webp"><link rel="canonical" href="https://farmanali.fun/projects/blogistan.html"><link rel="preload" href="../assets/fonts/JetBrainsMono-Regular.woff2" as="font" type="font/woff2" crossorigin><link rel="icon" type="image/png" href="../assets/icons/favicons/favicon-96x96.webp" sizes="96x96"><link rel="icon" type="image/svg+xml" href="../assets/icons/favicons/favicon.svg"><link rel="shortcut icon" href="../assets/icons/favicons/favicon.jpg"><link rel="apple-touch-icon" sizes="180x180" href="../assets/icons/favicons/apple-touch-icon.webp"><link rel="manifest" href="../assets/icons/favicons/site.webmanifest"></head><body><header><nav><h1 title="Farman Ali Portfolio"><a href="../index.html" class="logo">Farman Ali</a></h1><button class="menu" onclick="openMenu()"><img src="../assets/icons/menu_icon.svg" alt="Menu Icon By Farman Ali | Self-Taught Mern Stack Developer"></button><ul class="nav-bar"><button class="close" onclick="closeMenu()"><img src="../assets/icons/close.svg" alt="Close Icon By Farman Ali | Self-Taught Mern Stack Developer" alt="close" width="30px" height="30px"></button><li><a href="../index.html">Home</a></li><li><a href="../projects.html">All Projects</a></li><li><a href="../index.html#skills">Skills</a></li><li><a href="../index.html#education">Education</a></li><li><a href="../index.html#testimonials">Testimonials</a></li><li><a href="../index.html#contact">Contact</a></li><a class="primary-btn" href="../assets/pdf/resume_farmanali.pdf" download="resume_farmanali.pdf">Resume</a></ul></nav></header><article><section class="proj-description"><div class="image"><img src="../assets/images/projects/blogistan.webp" alt="Blogistan by Farman Ali - MERN Stack Developer" width="250" height="250" loading="lazy"></div><h1 class="proj-title">Blogistan</h1><h2>Blogistan Project By Farman Ali</h2><p class="proj-description">Blogistan, built by Farman Ali, a self-taught MERN stack developer from Bahawalpur, Pakistan, is a full-stack blog platform. Crafted with React for a fast, responsive frontend and Appwrite for backend services like authentication and database management, it’s a showcase of my skills in modern web development. Authors can create and manage blogs, while readers enjoy a seamless, category-driven experience—perfect for writers and content lovers alike.</p><div class="proj-links"><a href="https://blogistan.netlify.app" class="proj-link" target="_blank"><img src="../assets/icons/website.svg" alt=""> Live</a><a href="https://github.com/farmanali6349/blogistan" class="proj-link" target="_blank"><img src="../assets/icons/github.svg" alt=""> Github</a></div></section><section class="proj-detail"><h2 id="overview">📖 Overview</h2><p><strong>Blogistan</strong>is a full-featured blog platform designed to empower authors and engage readers. With built-in<strong>user authentication</strong>,<strong>blog creation</strong>,<strong>category management</strong>, and a<strong>responsive design</strong>, it offers a seamless writing and reading experience.</p><p>Authors can manage blogs and categories, while readers can explore content by category or author. Blogistan is perfect for writers looking to build their presence and for readers searching for high-quality, organized content.</p><hr><h2 id="features">✨ Features</h2><h3 id="user-authentication">🔐 User Authentication</h3><ul><li><strong>Login</strong></li><li><strong>Signup</strong></li><li><strong>Logout</strong></li></ul><h3 id="blog-management">📝 Blog Management</h3><ul><li>Create, update, delete blog posts</li><li>Each blog includes:<ul><li>Title</li><li>Rich content</li><li>Featured image with preview</li><li>Author info</li><li>Category tags</li></ul></li></ul><h3 id="category-management">🗂️ Category Management</h3><ul><li>Create, update, delete categories</li><li>Default category &quot;Uncategorized&quot; is protected</li><li>Each category includes:<ul><li>Name</li><li>Linked blogs</li><li>Category creator (author)</li></ul></li></ul><h3 id="author-management">👤 Author Management</h3><ul><li>Author profiles include:<ul><li>Name</li><li>Email</li><li>Bio</li><li>Social media links (Facebook, Instagram, LinkedIn, Medium, X)</li><li>List of authored blogs and created categories</li></ul></li></ul><h3 id="responsive-design">🖥️ Responsive Design</h3><ul><li>Fully responsive UI</li><li>Works smoothly on desktop, tablet, and mobile devices</li></ul><h3 id="-edit-account-page">⚙️ Edit Account Page</h3><ul><li>Update personal details</li><li>Change password securely</li></ul><hr><h2 id="pages">🗂️ Pages</h2><ul><li><strong>Home Page</strong>– Shows the latest blog posts</li><li><strong>Author Page</strong>– Lists all blogs and categories created by a specific author</li><li><strong>Category Page</strong>– Displays blogs from a selected category</li><li><strong>Edit Account Page</strong>– Lets users update their profile and password</li></ul><hr><h2 id="data-model">🧩 Data Model</h2><h3 id="blog">Blog</h3><pre><code class="lang-ts">{
-  <span class="hljs-attribute">title</span>: string;
-  <span class="hljs-attribute">content</span>: string;
-  <span class="hljs-attribute">featuredImage</span>: string;
-  <span class="hljs-attribute">author</span>: Author;
-  <span class="hljs-attribute">categories</span>: Category[];
+<!doctype html>
+<html lang=en>
+<head>
+<meta charset=UTF-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<title>Blogistan | Farman Ali - MERN Stack Developer Project</title>
+<meta name=description content="Blogistan by Farman Ali, a self-taught MERN stack developer from Pakistan. A full-stack blog platform built with React and Appwrite—explore features, demo, and code.">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JNF9RX5640"></script>
+<script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","G-JNF9RX5640")</script>
+<meta property=og:title content="Blogistan | Farman Ali - MERN Stack Developer Project">
+<meta property=og:description content="Blogistan by Farman Ali—a full-stack blog platform built with React and Appwrite. Check out the live demo and GitHub repo!">
+<meta property=og:image content=https://farmanali.fun/assets/images/projects/blogistan.webp>
+<meta property=og:url content=https://farmanali.fun/projects/blogistan.html>
+<meta property=og:type content=website>
+<meta name=twitter:card content=summary_large_image>
+<meta name=twitter:title content="Blogistan | Farman Ali - MERN Stack Developer Project">
+<meta name=twitter:description content="Blogistan by Farman Ali—a full-stack blog platform built with React and Appwrite. Check out the live demo and GitHub repo!">
+<meta name=twitter:image content=https://farmanali.fun/assets/images/projects/blogistan.webp>
+<link rel=canonical href=https://farmanali.fun/projects/blogistan.html>
+<link rel=preload href=../assets/fonts/JetBrainsMono-Regular.woff2 as=font type=font/woff2 crossorigin>
+<link rel=icon type=image/png href=../assets/icons/favicons/favicon-96x96.webp sizes=96x96>
+<link rel=icon type=image/svg+xml href=../assets/icons/favicons/favicon.svg>
+<link rel="shortcut icon" href=../assets/icons/favicons/favicon.jpg>
+<link rel=apple-touch-icon sizes=180x180 href=../assets/icons/favicons/apple-touch-icon.webp>
+<link rel=manifest href=../assets/icons/favicons/site.webmanifest>
+</head>
+<body>
+<header>
+<nav>
+<h1 title="Farman Ali Portfolio">
+<a href=../index.html class=logo>Farman Ali</a>
+</h1>
+<button class=menu onclick=openMenu()>
+<img src=../assets/icons/menu_icon.svg alt="Menu Icon By Farman Ali | Self-Taught Mern Stack Developer">
+</button>
+<ul class=nav-bar>
+<button class=close onclick=closeMenu()>
+<img src=../assets/icons/close.svg alt="Close Icon By Farman Ali | Self-Taught Mern Stack Developer" alt=close width=30px height=30px>
+</button>
+<li><a href=../index.html>Home</a></li>
+<li><a href=../projects.html>All Projects</a></li>
+<li><a href=../index.html#skills>Skills</a></li>
+<li><a href=../index.html#education>Education</a></li>
+<li><a href=../index.html#testimonials>Testimonials</a></li>
+<li><a href=../index.html#contact>Contact</a></li>
+<a class=primary-btn href=../assets/pdf/resume_farmanali.pdf download=resume_farmanali.pdf>Resume</a>
+</ul>
+</nav>
+</header>
+<article>
+<section class=proj-description>
+<div class=image>
+<img src=../assets/images/projects/blogistan.webp alt="Blogistan by Farman Ali - MERN Stack Developer" width=250 height=250 loading=lazy>
+</div>
+<h1 class=proj-title>Blogistan</h1>
+<h2>Blogistan Project By Farman Ali</h2>
+<p class=proj-description>
+Blogistan, built by Farman Ali, a self-taught MERN stack developer from Bahawalpur, Pakistan, is a full-stack blog platform. Crafted with React for a fast, responsive frontend and Appwrite for backend services like authentication and database management, it’s a showcase of my skills in modern web development. Authors can create and manage blogs, while readers enjoy a seamless, category-driven experience—perfect for writers and content lovers alike.
+</p>
+<div class=proj-links>
+<a href=https://blogistan.netlify.app class=proj-link target=_blank><img src=../assets/icons/website.svg alt=""> Live</a><a href=https://github.com/farmanali6349/blogistan class=proj-link target=_blank><img src=../assets/icons/github.svg alt=""> Github</a>
+</div>
+</section>
+<section class=proj-detail>
+<h2 id=overview>📖 Overview</h2>
+<p>
+<strong>Blogistan</strong>is a full-featured blog platform designed to empower authors and engage readers. With built-in<strong>user authentication</strong>,<strong>blog creation</strong>,<strong>category management</strong>, and a<strong>responsive design</strong>, it offers a seamless writing and reading experience.
+</p>
+<p>
+Authors can manage blogs and categories, while readers can explore content by category or author. Blogistan is perfect for writers looking to build their presence and for readers searching for high-quality, organized content.
+</p>
+<hr>
+<h2 id=features>✨ Features</h2>
+<h3 id=user-authentication>🔐 User Authentication</h3>
+<ul>
+<li><strong>Login</strong></li>
+<li><strong>Signup</strong></li>
+<li><strong>Logout</strong></li>
+</ul>
+<h3 id=blog-management>📝 Blog Management</h3>
+<ul>
+<li>Create, update, delete blog posts</li>
+<li>
+Each blog includes:
+<ul>
+<li>Title</li>
+<li>Rich content</li>
+<li>Featured image with preview</li>
+<li>Author info</li>
+<li>Category tags</li>
+</ul>
+</li>
+</ul>
+<h3 id=category-management>🗂️ Category Management</h3>
+<ul>
+<li>Create, update, delete categories</li>
+<li>Default category &quot;Uncategorized&quot; is protected</li>
+<li>
+Each category includes:
+<ul>
+<li>Name</li>
+<li>Linked blogs</li>
+<li>Category creator (author)</li>
+</ul>
+</li>
+</ul>
+<h3 id=author-management>👤 Author Management</h3>
+<ul>
+<li>
+Author profiles include:
+<ul>
+<li>Name</li>
+<li>Email</li>
+<li>Bio</li>
+<li>
+Social media links (Facebook, Instagram, LinkedIn, Medium, X)
+</li>
+<li>List of authored blogs and created categories</li>
+</ul>
+</li>
+</ul>
+<h3 id=responsive-design>🖥️ Responsive Design</h3>
+<ul>
+<li>Fully responsive UI</li>
+<li>Works smoothly on desktop, tablet, and mobile devices</li>
+</ul>
+<h3 id=-edit-account-page>⚙️ Edit Account Page</h3>
+<ul>
+<li>Update personal details</li>
+<li>Change password securely</li>
+</ul>
+<hr>
+<h2 id=pages>🗂️ Pages</h2>
+<ul>
+<li><strong>Home Page</strong>– Shows the latest blog posts</li>
+<li>
+<strong>Author Page</strong>– Lists all blogs and categories created by a specific author
+</li>
+<li>
+<strong>Category Page</strong>– Displays blogs from a selected category
+</li>
+<li>
+<strong>Edit Account Page</strong>– Lets users update their profile and password
+</li>
+</ul>
+<hr>
+<h2 id=data-model>🧩 Data Model</h2>
+<h3 id=blog>Blog</h3>
+<pre><code class=lang-ts>{
+  <span class=hljs-attribute>title</span>: string;
+  <span class=hljs-attribute>content</span>: string;
+  <span class=hljs-attribute>featuredImage</span>: string;
+  <span class=hljs-attribute>author</span>: Author;
+  <span class=hljs-attribute>categories</span>: Category[];
 }
-</code></pre><h3 id="categories">Categories</h3><pre><code class="lang-ts">{
-  <span class="hljs-attribute">name</span>: string;
-  <span class="hljs-attribute">blogs</span>: Blog[];
-  <span class="hljs-attribute">author</span>: Author;
+</code></pre>
+<h3 id=categories>Categories</h3>
+<pre><code class=lang-ts>{
+  <span class=hljs-attribute>name</span>: string;
+  <span class=hljs-attribute>blogs</span>: Blog[];
+  <span class=hljs-attribute>author</span>: Author;
 }
-</code></pre><h3 id="author">Author</h3><pre><code class="lang-ts">{
-  <span class="hljs-attribute">name</span>: string;
-  <span class="hljs-attribute">email</span>: string;
-  <span class="hljs-attribute">bio</span>: string;
-  <span class="hljs-attribute">facebook</span>: string;
-  <span class="hljs-attribute">instagram</span>: string;
-  <span class="hljs-attribute">linkedin</span>: string;
-  <span class="hljs-attribute">x</span>: string;
-  <span class="hljs-attribute">medium</span>: string;
-  <span class="hljs-attribute">blogs</span>: Blog[];
-  <span class="hljs-attribute">categories</span>: Category[];
+</code></pre>
+<h3 id=author>Author</h3>
+<pre><code class=lang-ts>{
+  <span class=hljs-attribute>name</span>: string;
+  <span class=hljs-attribute>email</span>: string;
+  <span class=hljs-attribute>bio</span>: string;
+  <span class=hljs-attribute>facebook</span>: string;
+  <span class=hljs-attribute>instagram</span>: string;
+  <span class=hljs-attribute>linkedin</span>: string;
+  <span class=hljs-attribute>x</span>: string;
+  <span class=hljs-attribute>medium</span>: string;
+  <span class=hljs-attribute>blogs</span>: Blog[];
+  <span class=hljs-attribute>categories</span>: Category[];
 }
-</code></pre><h3 id="tech-stack">⚙️ Tech Stack</h3><ul><li><p>Frontend: React.js, Tailwind CSS</p></li><li><p>Backend: Appwrite (Database, Auth, Storage)</p></li><li><p>Deployment: Netlify</p></li></ul><h1 id="setup-installation">🚀 Setup &amp; Installation</h1><p>Clone the repository git clone<code>https://github.com/farmanali6349/blogistan</code></p><p>Navigate into the project directory<code>cd blogistan</code></p><p>Install dependencies<code>npm install</code></p><p>Configure Appwrite backend (Use Appwrite console to set up project, collections, and environment variables)</p><p>Start development server<code>npm run dev</code></p><h3 id="deployment">📦 Deployment</h3><p>The project is deployed on<a href="https://blogistan.netlify.app/">Netlify</a>. You can deploy your own version by connecting the GitHub repo and setting environment variables for Appwrite.</p><h3 id="contributing">🤝 Contributing</h3><p>Contributions are welcome! Feel free to fork the repo, open issues, and submit pull requests.</p><h3 id="contact">📬 Contact</h3><ul><li>Name:<strong>Farman Ali</strong></li><li>Portfolio:<a href="https://farmanali.fun">farmanali.fun</a></li><li>GitHub:<a href="https://github.com/farmanali6349/">farmanali6349</a></li><li><strong>Linkedin</strong>:<a href="https://www.linkedin.com/in/farmanali6349/">farmanali6349</a></li></ul><hr></section></article><section id="work"><div class="section-title"><h2><span class="gradient-text">Other</span><br>Projects</h2></div><p class="section-description">As a<a href="../projects.html">MERN stack developer</a>, I built Blogistan using React and Appwrite, showcasing my skills in frontend and backend development.</p><div class="projects"><div class="project-card"><div class="project-image"><img src="../assets/images/projects/my-blog.webp" alt="My Blog project by MERN stack developer Farman Ali" width="250" height="250" loading="lazy"></div><div class="project-description"><div class="links"><a href="https://github.com/farmanali6349/my-blog"><img src="../assets/icons/github.svg" alt="My Blog Project By Farman Ali Self-Taught MERN stack developer github link"></a><a href="../projects/my-blog.html" class="project-link"><img src="../assets/icons/link.svg" alt="My Blog Project By Farman Ali Self-Taught MERN stack developer project details link"></a></div><div class="project-description-text"><div class="skill-tags"><a href="../projects.html" class="skill-tag">nodejs</a><a href="../projects.html?skill=express" class="skill-tag">express</a><a href="../projects.html?skill=mongodb" class="skill-tag">mongodb</a><a href="../projects.html?skill=ejs" class="skill-tag">ejs</a><a href="../projects.html?skill=jwt" class="skill-tag">jwt</a><a href="../projects.html?skill=bcrypt" class="skill-tag">bcrypt</a><a href="../projects.html?skill=fullstack" class="skill-tag">fullstack</a></div><h4>My Blog</h4><p>My Blog is a full-stack blogging platform created by Farman Ali using Node.js, Express.js, MongoDB, and EJS. It features server-side rendering, secure JWT authentication, and complete post management with a focus on clean architecture and performance.</p></div></div></div><div class="project-card"><div class="project-image"><img src="../assets/images/projects/guess-the-number.webp" alt="Guess the number game project by MERN stack developer Farman Ali" width="250" height="250" loading="lazy"></div><div class="project-description"><div class="links"><a href="https://guessthenumber5.netlify.app/"><img src="../assets/icons/website.svg" alt="Guess the number game Project By Farman Ali Self-Taught MERN stack developer live site link"></a><a href="https://github.com/farmanali6349/number-guessing-game"><img src="../assets/icons/github.svg" alt="Guess the number game Project By Farman Ali Self-Taught MERN stack developer github link"></a><a href="../projects/guess-the-number-game.html" class="project-link"><img src="../assets/icons/link.svg" alt="Guess the number game Project By Farman Ali Self-Taught MERN stack developer project details link"></a></div><div class="project-description-text"><div class="skill-tags"><a href="../projects.html" class="skill-tag">html</a><a href="../projects.html?skill=css" class="skill-tag">css</a><a href="../projects.html?skill=javascript" class="skill-tag">javascript</a><a href="../projects.html?skill=localstorage" class="skill-tag">localstorage</a><a href="../projects.html?skill=game" class="skill-tag">game</a><a href="../projects.html?skill=dom" class="skill-tag">dom</a></div><h4>Guess The Number Game</h4><p>A fun and interactive number guessing game where players try to guess a secret number between 1 and 100. Built with HTML, CSS, and JavaScript, it features difficulty levels, smart hints, local storage for stats, and a responsive UI for a game-like experience.</p></div></div></div></div></section><link rel="stylesheet" href="../src/styles/project.css"><script type="application/ld+json">{
+</code></pre>
+<h3 id=tech-stack>⚙️ Tech Stack</h3>
+<ul>
+<li><p>Frontend: React.js, Tailwind CSS</p></li>
+<li><p>Backend: Appwrite (Database, Auth, Storage)</p></li>
+<li><p>Deployment: Netlify</p></li>
+</ul>
+<h1 id=setup-installation>🚀 Setup &amp; Installation</h1>
+<p>
+Clone the repository git clone<code>https://github.com/farmanali6349/blogistan</code>
+</p>
+<p>Navigate into the project directory<code>cd blogistan</code></p>
+<p>Install dependencies<code>npm install</code></p>
+<p>
+Configure Appwrite backend (Use Appwrite console to set up project, collections, and environment variables)
+</p>
+<p>Start development server<code>npm run dev</code></p>
+<h3 id=deployment>📦 Deployment</h3>
+<p>
+The project is deployed on<a href=https://blogistan.netlify.app/ >Netlify</a>. You can deploy your own version by connecting the GitHub repo and setting environment variables for Appwrite.
+</p>
+<h3 id=contributing>🤝 Contributing</h3>
+<p>
+Contributions are welcome! Feel free to fork the repo, open issues, and submit pull requests.
+</p>
+<h3 id=contact>📬 Contact</h3>
+<ul>
+<li>Name:<strong>Farman Ali</strong></li>
+<li>Portfolio:<a href=https://farmanali.fun>farmanali.fun</a></li>
+<li>
+GitHub:<a href=https://github.com/farmanali6349/ >farmanali6349</a>
+</li>
+<li>
+<strong>Linkedin</strong>:<a href=https://www.linkedin.com/in/farmanali6349/ >farmanali6349</a>
+</li>
+</ul>
+<hr>
+</section>
+</article>
+<section id=work>
+<div class=section-title>
+<h2><span class=gradient-text>Other</span><br>Projects</h2>
+</div>
+<p class=section-description>
+As a<a href=../projects.html>MERN stack developer</a>, I built Blogistan using React and Appwrite, showcasing my skills in frontend and backend development.
+</p>
+<div class=projects>
+<div class=project-card>
+<div class=project-image>
+<img src=../assets/images/projects/my-blog.webp alt="My Blog project by MERN stack developer Farman Ali" width=250 height=250 loading=lazy>
+</div>
+<div class=project-description>
+<div class=links>
+<a href=https://github.com/farmanali6349/my-blog><img src=../assets/icons/github.svg alt="My Blog Project By Farman Ali Self-Taught MERN stack developer github link"></a><a href=../projects/my-blog.html class=project-link><img src=../assets/icons/link.svg alt="My Blog Project By Farman Ali Self-Taught MERN stack developer project details link"></a>
+</div>
+<div class=project-description-text>
+<div class=skill-tags>
+<a href=../projects.html class=skill-tag>nodejs</a><a href="../projects.html?skill=express" class=skill-tag>express</a><a href="../projects.html?skill=mongodb" class=skill-tag>mongodb</a><a href="../projects.html?skill=ejs" class=skill-tag>ejs</a><a href="../projects.html?skill=jwt" class=skill-tag>jwt</a><a href="../projects.html?skill=bcrypt" class=skill-tag>bcrypt</a><a href="../projects.html?skill=fullstack" class=skill-tag>fullstack</a>
+</div>
+<h4>My Blog</h4>
+<p>
+My Blog is a full-stack blogging platform created by Farman Ali using Node.js, Express.js, MongoDB, and EJS. It features server-side rendering, secure JWT authentication, and complete post management with a focus on clean architecture and performance.
+</p>
+</div>
+</div>
+</div>
+<div class=project-card>
+<div class=project-image>
+<img src=../assets/images/projects/guess-the-number.webp alt="Guess the number game project by MERN stack developer Farman Ali" width=250 height=250 loading=lazy>
+</div>
+<div class=project-description>
+<div class=links>
+<a href=https://guessthenumber5.netlify.app/ ><img src=../assets/icons/website.svg alt="Guess the number game Project By Farman Ali Self-Taught MERN stack developer live site link"></a><a href=https://github.com/farmanali6349/number-guessing-game><img src=../assets/icons/github.svg alt="Guess the number game Project By Farman Ali Self-Taught MERN stack developer github link"></a><a href=../projects/guess-the-number-game.html class=project-link><img src=../assets/icons/link.svg alt="Guess the number game Project By Farman Ali Self-Taught MERN stack developer project details link"></a>
+</div>
+<div class=project-description-text>
+<div class=skill-tags>
+<a href=../projects.html class=skill-tag>html</a><a href="../projects.html?skill=css" class=skill-tag>css</a><a href="../projects.html?skill=javascript" class=skill-tag>javascript</a><a href="../projects.html?skill=localstorage" class=skill-tag>localstorage</a><a href="../projects.html?skill=game" class=skill-tag>game</a><a href="../projects.html?skill=dom" class=skill-tag>dom</a>
+</div>
+<h4>Guess The Number Game</h4>
+<p>
+A fun and interactive number guessing game where players try to guess a secret number between 1 and 100. Built with HTML, CSS, and JavaScript, it features difficulty levels, smart hints, local storage for stats, and a responsive UI for a game-like experience.
+</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<link rel=stylesheet href=../src/styles/project.css>
+<script type=application/ld+json>
+{
         "@context": "https://schema.org",
         "@type": "SoftwareApplication",
         "name": "Blogistan",
@@ -35,4 +276,8 @@
         "operatingSystem": "Web",
         "url": "https://blogistan.netlify.app",
         "description": "A full-stack blog platform built by Farman Ali with React and Appwrite."
-      }</script><script src="../src/scripts/index.js" defer="defer"></script></body></html>
+      }
+</script>
+<script src=../src/scripts/index.js defer></script>
+</body>
+</html>
